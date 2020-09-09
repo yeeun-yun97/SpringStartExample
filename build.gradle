@@ -1,0 +1,47 @@
+buildscript{
+    ext{
+        springBootVersion='2.1.7.RELEASE'
+    }
+
+    //의존성들을 받을 원격 저장소. mavenCentral, jcenter
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    //개발에 필요한 의존성을 선언
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+
+}
+
+//플러그인 의존성 적용할 지 결정
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group 'kr.yyn9704kr'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+//프로젝트 제작 의존성
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    testCompile ('org.springframework.boot:spring-boot-starter-test')
+}
+
+//plugins {
+//    id 'java'AADOA
+//}
+
+
+
+
+
+
